@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+    sell
+{% endblock %}
+
+{% block main %}
+    <div class="form-page container">
+        <form action="/sell" method="post">
+            <input class="form-control mx-auto w-auto" name="symbol" type="text" placeholder="Symbol">
+            <input class="form-control mx-auto w-auto" name="shares" type="text" placeholder="Shares">
+            <button id="sell" class="btn btn-primary" type="submit">Sell</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block main %}
+    <div class="table-container">
+        <table class="container-fuid">
+            <thead>
+                <tr>
+                    <td>Symbol</td>
+                    <td>Name</td>
+                    <td>Shares</td>
+                    <td>Price</td>
+                    <td>TOTAL</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in purchases %}
+                <tr>
+                    <td>{{ row['symbol'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['shares'] }}</td>
+                    <td>{{ row['price'] }}</td>
+                    <td>{{ row['total'] | usd }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <table id="cash">
+        <thead>
+            <tr>
+                <td>Cash</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ balance }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

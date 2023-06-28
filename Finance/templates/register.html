@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="form-page container-fluid container">
+        <form action="/register" method="post">
+            <input class="form-control mx-auto w-auto" name="username" type="text" required placeholder="Username">
+            <input class="form-control mx-auto w-auto" name="password" type="password" required placeholder="password">
+            <input class="form-control mx-auto w-auto"name="confirmation" type="password" required placeholder="Retype your password">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+{% endblock %}

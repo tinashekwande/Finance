@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block main %}
+    <div class="table-container">
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <td>Symbol</td>
+                    <td>Name</td>
+                    <td>Shares</td>
+                    <td>Price</td>
+                    <td>Transaction</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>
+                        <form action="/clear" method="post">
+                            <button type="submit">Clear history</button>
+                        </form>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in history %}
+                <tr>
+                    <td>{{ row['symbol'] }}</td>
+                    <td>{{ row['name'] }}</td>
+                    <td>{{ row['shares'] }}</td>
+                    <td>{{ row['price'] }}</td>
+                    <td>{{ row['purchase'] }}</td>
+                    <td>{{ row['date'] }}</td>
+                    <td>{{ row['time'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
